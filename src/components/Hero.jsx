@@ -1,16 +1,44 @@
 import React from 'react';
-
+import LightRays from "./LightRays";
 export default function Hero() {
   return (
     <section className="section" id="hero">
+       <LightRays
+    raysColor="#f2ba56"
+    pulsating={true}
+    noiseAmount={0.16}
+    fadeDistance={2}
+    lightSpread={1.6}
+    saturation={1.4}
+    className="hero-light-rays"
+  />
+   <div className="hero-content">
+    <div className="hero-left">
+      {/* your existing hero tag, heading, text, buttons, stats */}
+    </div>
+  </div>
       <div className="hero-bg-circle"></div>
       <div className="hero-tag">
         <div className="hero-tag-dot"></div>
         Now available on Android &amp; iOS
       </div>
-      <h1 className="hero-headline">
-        Your society,<br /><em>seamlessly</em><br />managed.
-      </h1>
+      <div className="hero-top-row">
+  <div className="hero-title-block">
+    <h1 className="hero-headline">
+      Your society,
+      <br />
+      <em>seamlessly</em>
+      <br />
+      managed.
+    </h1>
+  </div>
+
+  <img
+    src="/logo.jpeg"
+    alt="Society Seva"
+    className="hero-logo"
+  />
+</div>
       <p className="hero-sub">
         Society Seva brings bills, maintenance, announcements, and resident communication into one simple app — built for every apartment society in India.
       </p>
