@@ -1,53 +1,37 @@
-import React from 'react';
+import TiltedCard from "./TiltedCard";
 
-const featuresData = [
+const features = [
   {
-    icon: '💰',
-    bg: '#E8F0FB',
-    title: 'Bill Management',
-    desc: 'Generate, send, and track maintenance bills. Residents get instant notifications and can pay directly in-app.',
+    title: "Society Announcements",
+    image: "/societyannouncement.png",
   },
   {
-    icon: '📢',
-    bg: '#EAF4EA',
-    title: 'Society Announcements',
-    desc: 'Push important notices, event updates, and emergency alerts to all residents instantly.',
+    title: "Bill Management",
+    image: "/billmanagement.png",
   },
   {
-    icon: '🔧',
-    bg: '#FEF4E3',
-    title: 'Maintenance Requests',
-    desc: 'Residents raise complaints, track status, and get resolved confirmations — all without phone calls.',
+    title: "Maintenance Requests",
+    image: "/Maintenance.png",
   },
   {
-    icon: '💳',
-    bg: '#F3E8FF',
-    title: 'Online Payments',
-    desc: 'UPI, debit/credit card, and net banking supported. Payment receipts generated automatically.',
+    title: "Online Payments",
+    image: "/onlinepayment.png",
   },
   {
-    icon: '📋',
-    bg: '#FFE8E8',
-    title: 'Resident Directory',
-    desc: 'Manage flat-wise resident data, ownership details, vehicle records, and emergency contacts in one place.',
+    title: "Resident Directory",
+    image: "/residency.png",
   },
   {
-    icon: '📊',
-    bg: '#E8FFF4',
-    title: 'Financial Reports',
-    desc: 'Monthly, quarterly, and yearly society accounts with downloadable PDF reports for the committee.',
+    title: "Financial Reports",
+    image: "/financialreport.png",
   },
   {
-    icon: '🚗',
-    bg: '#FFF8E8',
-    title: 'Visitor & Vehicle Log',
-    desc: 'Gate entry log for visitors and vehicles. Pre-approve guests and track who enters and exits.',
+    title: "Visitor & Vehicle Log",
+    image: "/visitor.png",
   },
   {
-    icon: '📅',
-    bg: '#E8F4FF',
-    title: 'Amenity Booking',
-    desc: 'Let residents book the clubhouse, swimming pool, or party hall — with conflict detection built in.',
+    title: "Amenity Booking",
+    image: "/amenity.png",
   },
 ];
 
@@ -56,21 +40,30 @@ export default function Features() {
     <section className="section" id="features">
       <div className="section-eyebrow">02 — Features</div>
       <h2 className="section-title">Everything your society needs</h2>
-      <p className="section-sub">From maintenance bills to visitor logs — Society Seva handles it all so you can focus on what matters.</p>
-      <div className="scroll-hint">
-  ← Scroll to explore features →
-</div>
-      <div className="features-wrapper">
+
       <div className="features-grid">
-        {featuresData.map((f, i) => (
-          <div key={i} className="feature-card">
-            <div className="feature-icon" style={{ backgroundColor: f.bg }}>{f.icon}</div>
-            <div className="feature-title">{f.title}</div>
-            <div className="feature-desc">{f.desc}</div>
-          </div>
-          
-        ))}
-      </div>
+       {features.map((feature, index) => (
+<TiltedCard
+  imageSrc={feature.image}
+  altText={feature.title}
+  captionText={feature.title}
+  containerHeight="100%"
+  containerWidth="100%"
+  imageHeight="100%"
+  imageWidth="100%"
+  rotateAmplitude={12}
+  scaleOnHover={1.05}
+  showMobileWarning={false}
+  showTooltip={false}
+  displayOverlayContent
+  overlayContent={
+    <div className="feature-overlay">
+      <h3>{feature.title}</h3>
+      <p>{feature.desc}</p>
+    </div>
+  }
+/>
+))}
       </div>
     </section>
   );
