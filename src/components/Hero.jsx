@@ -6,10 +6,10 @@ export default function Hero() {
        <LightRays
     raysColor="#f2ba56"
     pulsating={true}
-    noiseAmount={0.16}
-    fadeDistance={2}
-    lightSpread={1.6}
-    saturation={1.4}
+    noiseAmount={0.08}
+    fadeDistance={3}
+    lightSpread={0.8}
+    saturation={0.8}
     className="hero-light-rays"
   />
    <div className="hero-content">

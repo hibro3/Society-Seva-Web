@@ -57,6 +57,10 @@ export default function Features() {
       <div className="section-eyebrow">02 — Features</div>
       <h2 className="section-title">Everything your society needs</h2>
       <p className="section-sub">From maintenance bills to visitor logs — Society Seva handles it all so you can focus on what matters.</p>
+      <div className="scroll-hint">
+  ← Scroll to explore features →
+</div>
+      <div className="features-wrapper">
       <div className="features-grid">
         {featuresData.map((f, i) => (
           <div key={i} className="feature-card">
@@ -64,7 +68,9 @@ export default function Features() {
             <div className="feature-title">{f.title}</div>
             <div className="feature-desc">{f.desc}</div>
           </div>
+          
         ))}
+      </div>
       </div>
     </section>
   );
