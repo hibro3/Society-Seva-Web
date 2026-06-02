@@ -44,6 +44,7 @@ export default function Features() {
       <div className="features-grid">
        {features.map((feature, index) => (
 <TiltedCard
+key={feature.title}
   imageSrc={feature.image}
   altText={feature.title}
   captionText={feature.title}
@@ -58,8 +59,9 @@ export default function Features() {
   displayOverlayContent
   overlayContent={
     <div className="feature-overlay">
+       <div className="feature-title-pill">
       <h3>{feature.title}</h3>
-      <p>{feature.desc}</p>
+      </div>
     </div>
   }
 />
