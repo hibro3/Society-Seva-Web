@@ -357,7 +357,7 @@ header {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
-.feature-card {
+.role-card {
   background: rgba(17,31,51,0.85);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(26, 92, 168, 0.08);
@@ -368,10 +368,8 @@ header {
   position: relative;
   overflow: hidden;
 }
-.role-card {
-  background: rgba(17,31,51,0.65);
-}
-.feature-card::before {
+
+.role-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -386,33 +384,33 @@ header {
 );
   transition: width 0.35s ease;
 }
-.feature-card:hover {   
+.role-card:hover {   
   transform: translateY(-8px);
  box-shadow:
     0 20px 40px rgba(15, 23, 42, 0.08),
     0 0 0 1px rgba(26, 92, 168, 0.08);
   border-color: rgba(26, 92, 168, 0.25);
  }
-.feature-card:hover::before {
+.role-card:hover::before {
   width: 100%;
 }
-.feature-icon {
+.role-icon {
   transition: all 0.35s ease;
   width: 64px; height: 64px; border-radius: 18px;
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px; font-size: 22px;
   backdrop-filter: blur(10px);
 }
-.feature-card:hover .feature-icon {
+.role-card:hover .role-icon {
   transform: translateY(-4px) scale(1.05);
 }
-.feature-title {
+.role-title {
   font-size: 1.45rem;
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--text);
 }
-.feature-desc { 
+.role-desc { 
   font-size: 14px; line-height: 1.8;
   color: var(--text-muted);; 
 }
@@ -455,17 +453,82 @@ header {
 .role-list li::before { content: '✓'; color: var(--green); font-weight: 600; margin-top: 1px; flex-shrink: 0; }
 
 /* ── SECURITY ── */
-.security-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.security-card {
-  background: rgba(17,31,51,0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: 14px; padding: 24px; text-align: center;
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 50px;
 }
-.security-icon { font-size: 32px; margin-bottom: 12px; }
-.security-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.security-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
+.security-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 24px;
+  padding: 32px;
+  transition: .3s;
+}
+
+.security-card:hover {
+  transform: translateY(-8px);
+}
+
+.security-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.security-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.security-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.security-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.security-section {
+  background: var(--bg-soft);
+}
+
+.security-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.security-lock-img {
+  width: 100%;
+  max-width: 430px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 45px rgba(40, 180, 255, 0.35));
+  transition: transform 0.4s ease;
+}
+.security-lock-img:hover {
+  transform: translateY(-8px)  scale(1.02);
+}
+@media (max-width: 900px) {
+  .security-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .security-right {
+    order: -1;
+  }
+
+  .security-lock-img {
+    max-width: 300px;
+  }
+}
 /* ── DOWNLOAD ── */
 #download {
   background: linear-gradient(

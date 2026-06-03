@@ -90,11 +90,33 @@
   display: block;
 }
 
-.feature-overlay h3 {
-  color:rgb(42, 56, 158);
-  font-size: 1.5rem;
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #7CE1DC,
+    #4DD2C6,
+    #1CBEBF,
+    #079481,
+    #08599D,
+    #7CE1DC
+  );
+    font-size: 1.5rem;
   font-weight: 600;
   text-shadow: none;
+
+  background-size: 300% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 300% center;
+  }
 }
 
 .feature-overlay p {

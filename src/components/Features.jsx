@@ -32,6 +32,7 @@ const features = [
   {
     title: "Amenity Booking",
     image: "/amenity.png",
+
   },
 ];
 
@@ -42,30 +43,32 @@ export default function Features() {
       <h2 className="section-title">Everything your society needs</h2>
 
       <div className="features-grid">
-       {features.map((feature, index) => (
-<TiltedCard
-key={feature.title}
-  imageSrc={feature.image}
-  altText={feature.title}
-  captionText={feature.title}
-  containerHeight="100%"
-  containerWidth="100%"
-  imageHeight="100%"
-  imageWidth="100%"
-  rotateAmplitude={12}
-  scaleOnHover={1.05}
-  showMobileWarning={false}
-  showTooltip={false}
-  displayOverlayContent
-  overlayContent={
-    <div className="feature-overlay">
-       <div className="feature-title-pill">
-      <h3>{feature.title}</h3>
-      </div>
-    </div>
-  }
-/>
-))}
+       {features.map((feature, index) => {
+         return (
+           <TiltedCard
+             key={feature.title}
+             imageSrc={feature.image}
+             altText={feature.classname}
+             captionText={feature.title}
+             containerHeight="100%"
+             containerWidth="100%"
+             imageHeight="100%"
+             imageWidth="100%"
+             rotateAmplitude={12}
+             scaleOnHover={1.05}
+             showMobileWarning={false}
+             showTooltip={false}
+             displayOverlayContent
+             overlayContent={
+               <div className="feature-overlay">
+                 <div className="feature-title-pill">
+                   <h3 className={"gradient-text"}>{feature.title}</h3>
+                 </div>
+               </div>
+             }
+           />
+         );
+       })}
       </div>
     </section>
   );
