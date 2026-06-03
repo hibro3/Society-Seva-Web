@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
@@ -10,15 +9,7 @@ import Download from './components/Download';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const sections = [
-  'hero',
-  'features',
-  'how-it-works',
-  'roles',
-  'security',
-  'download',
-  'contact',
-];
+
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -86,11 +77,6 @@ export default function App() {
       <Header scrollToSection={scrollToSection} />
 
       <div className="page-body">
-        <Sidebar
-          activeSection={activeSection}
-          scrollProgress={scrollProgress}
-          scrollToSection={scrollToSection}
-        />
 
         <main className="main-content">
           <Hero />
