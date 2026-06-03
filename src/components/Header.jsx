@@ -1,4 +1,5 @@
 import React from 'react';
+import PillNav from "./PillNav";
 
 export default function Header({ scrollToSection }) {
   const handleNavClick = (e, targetId) => {
@@ -19,14 +20,9 @@ export default function Header({ scrollToSection }) {
     Society <span>Seva</span>
   </span>
 </a>
-      <nav className="header-nav">
-        <a href="#features" onClick={(e) => handleNavClick(e, 'features')}>Features</a>
-        <a href="#how-it-works" onClick={(e) => handleNavClick(e, 'how-it-works')}>How it works</a>
-        <a href="#roles" onClick={(e) => handleNavClick(e, 'roles')}>Who it's for</a>
-        <a href="#security" onClick={(e) => handleNavClick(e, 'security')}>Security</a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
-      </nav>
+<PillNav />
       <a href="#download" className="header-cta" onClick={(e) => handleNavClick(e, 'download')}>Download App</a>
+        
     </header>
   );
 }

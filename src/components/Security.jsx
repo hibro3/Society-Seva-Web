@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import securityLock from "/security-lock.png";
+import SpotlightCard from "./SpotlightCard";
 
 const securityData = [
   {
@@ -39,17 +40,25 @@ export default function Security() {
 
           <div className="security-grid">
             {securityData.map((card, i) => (
-              <div key={i} className="security-card">
+              <SpotlightCard
+                key={i}
+                className="security-card"
+                spotlightColor="rgba(1, 137, 112, 0.25)"
+              >
                 <div className="security-icon">{card.icon}</div>
                 <div className="security-title">{card.title}</div>
                 <div className="security-desc">{card.desc}</div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
 
         <div className="security-right">
-          <img src={securityLock} alt="3D security lock" className="security-lock-img" />
+          <img
+            src={securityLock}
+            alt="3D security lock"
+            className="security-lock-img"
+          />
         </div>
       </div>
     </section>
