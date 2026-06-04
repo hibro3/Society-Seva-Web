@@ -9,7 +9,15 @@ import Download from './components/Download';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-
+const sections = [
+  "hero",
+  "features",
+  "how-it-works",
+  "who",
+  "security",
+  "contact",
+  "download",
+];
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('hero');
