@@ -1,30 +1,56 @@
-import React from 'react';
+
 
 export default function Footer({ scrollToSection }) {
-  const handleNavClick = (e, targetId) => {
+  const handleNavClick = (e, sectionId) => {
     e.preventDefault();
-    scrollToSection(targetId);
+    if (scrollToSection && sectionId) {
+      scrollToSection(sectionId);
+    }
   };
 
   return (
-    <footer>
-      <a
-        href="#hero"
-        className="logo"
-        style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
-        onClick={(e) => handleNavClick(e, 'hero')}
-      >
-        <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '16px', color: 'var(--text)' }}>
-          Society <span style={{ color: 'var(--green)' }}>Seva</span>
-        </span>
-      </a>
-      <div className="footer-links">
-        <a href="#privacy" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
-        <a href="#terms" onClick={(e) => e.preventDefault()}>Terms of Service</a>
-        <a href="#refund" onClick={(e) => e.preventDefault()}>Refund Policy</a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+    <footer className="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md bg-primary text-on-primary">
+      <div className="flex flex-col gap-4 text-center md:text-left">
+        <a 
+          href="#" 
+          onClick={(e) => handleNavClick(e, 'hero')} 
+          className="flex items-center justify-center md:justify-start gap-2"
+        >
+          <img 
+            alt="SocietySeva Logo" 
+            className="h-8 w-8 object-contain rounded-md" 
+            src="/logo.jpeg"
+          />
+          <span className="font-headline-h3 text-headline-h3 text-surface-white font-semibold">SocietySeva</span>
+        </a>
+        <p className="font-body-sm text-body-sm text-on-primary-container max-w-sm opacity-80">
+          © 2024 SocietySeva. All rights reserved. Built for modern community governance.
+        </p>
       </div>
-      <div>© 2025 Society Seva. Made with ❤️ in Pune, India.</div>
+      
+      <div className="flex flex-wrap justify-center gap-stack-md">
+        <a className="font-body-sm text-body-sm text-on-primary-container hover:text-surface-white transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+        <a className="font-body-sm text-body-sm text-on-primary-container hover:text-surface-white transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+        <a className="font-body-sm text-body-sm text-on-primary-container hover:text-surface-white transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+        <a className="font-body-sm text-body-sm text-on-primary-container hover:text-surface-white transition-colors opacity-80 hover:opacity-100" href="#">Security</a>
+      </div>
+      
+      <div className="flex gap-4">
+        <a 
+          className="w-10 h-10 rounded-full border border-on-primary-container/30 flex items-center justify-center text-surface-white hover:bg-surface-white/10 transition-colors" 
+          href="#"
+          aria-label="Website"
+        >
+          <span className="material-symbols-outlined">public</span>
+        </a>
+        <a 
+          className="w-10 h-10 rounded-full border border-on-primary-container/30 flex items-center justify-center text-surface-white hover:bg-surface-white/10 transition-colors" 
+          href="#"
+          aria-label="Contact Email"
+        >
+          <span className="material-symbols-outlined">mail</span>
+        </a>
+      </div>
     </footer>
   );
 }
